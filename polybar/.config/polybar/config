@@ -1056,7 +1056,7 @@ bar-used-empty-foreground = #ffffff
 format = <label> <bar-used>
 format-prefix = "  "
 format-prefix-foreground = #3384d0
-format-underline = #4B5665
+;format-underline = #4B5665
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
