@@ -230,7 +230,7 @@ smart_gaps on
 smart_borders on
 
 # Autostart
-exec --no-startup-id picom &
+exec --no-startup-id picom -b &
 exec --no-startup-id sh ~/.config/polybar/launch.sh
 exec --no-startup-id light-locker &
 exec --no-startup-id nm-applet &
@@ -246,4 +246,4 @@ bindsym $mod+Shift+less move workspace to output left
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
-bindsym $mod+Shift+p exec sh ~/.config/polybar/launch.sh && pkill picom && picom &
+bindsym $mod+Shift+p exec sh ~/.config/polybar/launch.sh && pkill -9 picom && picom -b &
