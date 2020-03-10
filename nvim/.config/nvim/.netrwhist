@@ -1,6 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/cmcderm/Dotfiles/polybar/.config/polybar'
+let g:netrw_dirhist_0='/home/cmcderm/Dotfiles/polybar/.config'
+let g:netrw_dirhist_9='/home/cmcderm/Dotfiles/polybar'
+let g:netrw_dirhist_8='/home/cmcderm/Dotfiles'
+let g:netrw_dirhist_7='/home/cmcderm/Dotfiles/polybar/.config/polybar'
+let g:netrw_dirhist_6='/home/cmcderm/Dotfiles/polybar/.config'
+let g:netrw_dirhist_5='/home/cmcderm/Dotfiles/polybar'
 let g:netrw_dirhist_4='/home/cmcderm/Documents/Repos/TopDownShooter/Assets/_Scripts/Player'
 let g:netrw_dirhist_3='/home/cmcderm/Documents/Repos/TopDownShooter/Assets/_Scripts'
 let g:netrw_dirhist_2='/home/cmcderm/Documents/Repos/TopDownShooter/Assets'
-let g:netrw_dirhist_1='/home/cmcderm/Documents/Repos/TopDownShooter'

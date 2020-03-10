@@ -46,7 +46,7 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #292d3e
+background = #88292d3e
 foreground = #c0c5ce
 alert = #bd2c40
 volume-min = #a3be8c
@@ -90,7 +90,7 @@ override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 20
+height = 25
 ;offset-x = 1%
 ;offset-y = 1%
 
@@ -125,7 +125,7 @@ font-1 = NotoSans Nerd Font:style=Regular;size=14;3
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = arrow1 memory1 arrow3 cpu1 arrow1 temperature1 arrow1 pavolume arrow1 backlight arrow1 battery
+modules-right = arrow3 memory1 arrow3 cpu1 arrow3 temperature1 arrow3 pavolume arrow3 backlight arrow3 battery
 
 separator = 
 
