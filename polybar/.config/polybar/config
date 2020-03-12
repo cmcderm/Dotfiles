@@ -86,7 +86,6 @@ volume-max = #bf616a
 monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
 monitor-strict = false
-override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
@@ -140,9 +139,9 @@ tray-offset-y = 0
 tray-padding = 4
 tray-scale = 1.0
 
-#i3: Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
+#i3: Let the systray accept clicks
+wm-restack = i3
+override-redirect = false
 
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
