@@ -7,7 +7,7 @@ set number relativenumber
 
 set tabstop=4
 
-set listchars=tab:->,trail~,extends:>,precedes:<,space:.
+set listchars=tab:->,trail:~,extends:>,precedes:<,space:.
 noremap <F5> :set list!<CR>
 
 set splitbelow splitright
