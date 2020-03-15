@@ -1283,6 +1283,7 @@ label = %temperature%
 label-font = 2
 label-warn =  %temperature%
 label-warn-foreground = #ff254f
+label-warn-background = ${colors.background}
 
 ramp-0 = " "
 ramp-1 = " "
@@ -1290,6 +1291,7 @@ ramp-2 = " "
 ramp-3 = " "
 ramp-4 = " "
 ramp-foreground =${colors.foreground}
+ramp-background = ${colors.background}
 
 ################################################################################
 

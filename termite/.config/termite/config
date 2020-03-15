@@ -1,5 +1,5 @@
 [options]
-font=Hack Nerd Font
+font=Hack Nerd Font 14px
 
 [colors]
 background = rgba(29, 35, 67, 0.90)

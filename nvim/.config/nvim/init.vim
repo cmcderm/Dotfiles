@@ -3,6 +3,8 @@ set nocompatible
 syntax enable
 filetype plugin on
 
+set clipboard+=unnamedplus
+
 set number relativenumber
 
 set tabstop=4
