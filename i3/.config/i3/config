@@ -28,7 +28,7 @@ font pango:NotoSans Nerd Font 10
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -235,6 +235,7 @@ exec --no-startup-id sh ~/.config/polybar/launch.sh
 exec --no-startup-id light-locker &
 exec --no-startup-id nm-applet &
 exec --no-startup-id optimus-manager-qt &
+exec --no-startup-id blueman-applet &
 
 exec --no-startup-id xinput set-prop 15 306 1
 
