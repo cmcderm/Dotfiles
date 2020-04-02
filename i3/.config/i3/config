@@ -222,8 +222,8 @@ client.background       #ffffff
 exec --no-startup-id ~/.fehbg
 
 # Gaps
-gaps inner 10
-gaps outer 10
+gaps inner 8
+gaps outer 0
 smart_gaps on
 
 # Borders
