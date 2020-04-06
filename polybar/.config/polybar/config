@@ -1051,7 +1051,7 @@ interval = 1
 ;   %mb_free%
 ;   %mb_total%
 label = %percentage_used%%
-label-font = 0
+label-font = 2
 bar-used-indicator =
 bar-used-width = 10
 bar-used-foreground-0 = #3384d0
