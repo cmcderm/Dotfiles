@@ -28,7 +28,7 @@ font pango:NotoSans Nerd Font 10
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -222,19 +222,21 @@ client.background       #ffffff
 exec --no-startup-id ~/.fehbg
 
 # Gaps
-gaps inner 10
-gaps outer 10
+gaps inner 8
+gaps outer 0
 smart_gaps on
 
 # Borders
 smart_borders on
 
 # Autostart
-exec --no-startup-id picom -b &
+exec --no-startup-id sh ~/.config/picom/scripts/launch.sh
 exec --no-startup-id sh ~/.config/polybar/launch.sh
 exec --no-startup-id light-locker &
 exec --no-startup-id nm-applet &
 exec --no-startup-id optimus-manager-qt &
+exec --no-startup-id blueman-applet &
+exec --no-startup-id dunst &
 
 exec --no-startup-id xinput set-prop 15 306 1
 
@@ -246,4 +248,4 @@ bindsym $mod+Shift+less move workspace to output left
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
-bindsym $mod+Shift+p exec sh ~/.config/polybar/launch.sh && pkill -9 picom && picom -b &
+bindsym $mod+Shift+p exec sh ~/.config/polybar/launch.sh && ~/.config/picom/scripts/launch.sh

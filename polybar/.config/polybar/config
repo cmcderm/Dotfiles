@@ -136,7 +136,7 @@ tray-maxsize = 20
 tray-background = ${colors.background}
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 4
+tray-padding = 0
 tray-scale = 1.0
 
 #i3: Let the systray accept clicks
@@ -473,13 +473,13 @@ fuzzy-match = false
 
 ;extra icons to choose from
 ;http://fontawesome.io/cheatsheet/
-;       v     
+;       v      諸
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;調
 ws-icon-3 = 4;
-ws-icon-4 = 5;
+ws-icon-4 = 5;ﮠ
 ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;
@@ -492,8 +492,10 @@ ws-icon-default = " "
 ;   <label-mode> (default)
 format = <label-state> <label-mode>
 
+format-font = 2
+
 label-mode = %mode%
-label-mode-padding = 1
+label-mode-padding = 2
 label-mode-foreground = #000000
 label-mode-background = #FFBB00
 
@@ -508,7 +510,7 @@ label-focused = %icon% %name%
 label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.foreground}
 label-focused-underline = #AD69AF
-label-focused-padding = 1
+label-focused-padding = 2
 
 ; Available tokens:
 ;   %name%
@@ -517,7 +519,7 @@ label-focused-padding = 1
 ; Default: %icon%  %name%
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon% %name%
-label-unfocused-padding = 1
+label-unfocused-padding = 2
 label-unfocused-background = ${colors.background}
 label-unfocused-foreground = ${colors.foreground}
 label-unfocused-underline =
@@ -526,7 +528,7 @@ label-unfocused-underline =
 label-visible = %icon% %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = 1
+label-visible-padding = 2
 
 ; Available tokens:
 ;   %name%
@@ -537,7 +539,7 @@ label-visible-padding = 1
 label-urgent = %icon% %name%
 label-urgent-background = ${self.label-focused-background}
 label-urgent-foreground = #db104e
-label-urgent-padding = 1
+label-urgent-padding = 2
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -1049,7 +1051,7 @@ interval = 1
 ;   %mb_free%
 ;   %mb_total%
 label = %percentage_used%%
-label-font = 0
+label-font = 2
 bar-used-indicator =
 bar-used-width = 10
 bar-used-foreground-0 = #3384d0
@@ -1270,7 +1272,7 @@ thermal-zone = 0
 ; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 ; to find path to desired file
 ; Default reverts to thermal zone setting
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
 
 warn-temperature = 70
 format = <ramp> <label>
