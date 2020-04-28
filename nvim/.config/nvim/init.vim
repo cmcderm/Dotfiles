@@ -1,3 +1,31 @@
+" Plugins
+" call plug#begin('~/.config/nvim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+
+call plug#end()
+
+" coc config
+let g:coc_global_extensions = [
+	\ 'coc-pairs',
+	\ 'coc-json',
+	\ 'coc-rls'
+	\]
+
+inoremap <silent><expr> <TAB>
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
 set nocompatible
 
 syntax enable
