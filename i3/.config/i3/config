@@ -243,10 +243,15 @@ exec --no-startup-id xinput set-prop 15 306 1
 # Window Rules
 for_window [class='unityhub'] floating enable
 for_window [title="Microsoft Teams Notification"] floating enable
+for_window [title='galculator'] floating enable
 
 # Custom Bindings
 bindsym $mod+Shift+less move workspace to output left
 bindsym $mod+Shift+greater move workspace to output right
+
+bindsym $mod+z workspace prev
+bindsym $mod+x workspace next
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
+
 bindsym $mod+Shift+p exec sh ~/.config/polybar/launch.sh && ~/.config/picom/scripts/launch.sh
