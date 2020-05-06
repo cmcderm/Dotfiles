@@ -1511,7 +1511,7 @@ label = %title%
 label-maxlen = 50
 label-font = 2
 
-format-prefix = "  "
+format-postfix = " "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
