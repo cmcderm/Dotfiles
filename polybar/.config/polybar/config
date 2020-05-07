@@ -762,6 +762,7 @@ format-full-prefix = "   "
 format-full-background = ${colors.background}
 format-full-prefix-foreground = #a3c725
 format-full-foreground = #a3c725
+label-full-font = 2
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
