@@ -46,13 +46,23 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #88292d3e
-foreground = #c0c5ce
-alert = #bd2c40
-volume-min = #a3be8c
-volume-med = #ebcb8b
-volume-max = #bf616a
+; background = #88292d3A
+; foreground = #c0c5ce
+; alert = #bd2c40
+; volume-min = #a3be8c
+; volume-med = #ebcb8b
+; volume-max = #bf616a
 ; =======================
+
+; Pywal theme ===========
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+alert = ${xrdb:color3:#222}
+volume-min = ${xrdb:color1:#222}
+volume-med = ${xrdb:color2:#222}
+volume-max = ${xrdb:color3:#222}
+; =======================
+
 
 ; Gotham theme ==========
 ; background = #0a0f14

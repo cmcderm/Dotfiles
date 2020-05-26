@@ -47,7 +47,7 @@ filetype plugin on
 
 set clipboard+=unnamedplus
 
-set number relativenumber
+set number
 
 set tabstop=4
 

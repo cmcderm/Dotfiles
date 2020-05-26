@@ -111,4 +111,6 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.bash_aliases ]] || source ~/.bash_aliases
 
 export EDITOR=nvim
-wal -e --vte -q -i ~/.config/wallpaper.png
+# wal -e --vte -q -i ~/.config/wallpaper.png
+
+(cat ~/.cache/wal/sequences &)
