@@ -1,0 +1,4 @@
+!! URxvt Appearance
+
+URxvt*font: xft:Hack Nerd Font:style=Regular:size=9
+Urxvt*scrollBar: false

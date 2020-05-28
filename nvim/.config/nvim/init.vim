@@ -8,6 +8,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() } }
 
+" LaTeX
+Plug 'donRaphaco/neotex', { 'for': 'tex' }
+
 call plug#end()
 
 " coc config
@@ -40,6 +43,10 @@ let g:mkdp_browser = 'firefox'
 " Show preview URL after starting
 let g:mkdp_echo_preview_url = 1
 
+" LaTeX preview
+let g:text_flavor = 'latex'
+let g:neotex_delay = 500
+
 set nocompatible
 
 syntax enable
@@ -50,6 +57,7 @@ set clipboard+=unnamedplus
 set number
 
 set tabstop=4
+set shiftwidth=4
 
 set listchars=tab:->,trail:~,extends:>,precedes:<,space:.
 noremap <F5> :set list!<CR>

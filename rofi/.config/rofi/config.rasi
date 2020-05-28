@@ -1,0 +1,12 @@
+/* Rofi config file */
+configuration {
+	modi: "window,run,ssh";
+    lines: 12;
+    font: "Hack Nerd Font Regular 12";
+	icon-theme: "Papirus";
+	show-icons: true;
+    //theme: "~/.cache/wal/colors-rofi-dark";
+	theme: "material";
+    display-window: "Window";
+    display-drun: "Search";
+}
