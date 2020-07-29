@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-killall -q picom
+#killall -9 picom
 
-while pgrep -u $UID -x picom > /dev/null; do sleep 1; done
+#while pgrep -u $UID -x picom > /dev/null; do sleep 1; done
 
 picom -bCG
+

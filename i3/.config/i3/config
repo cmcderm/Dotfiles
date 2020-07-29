@@ -185,7 +185,7 @@ mode "System" {
 	#Lock
 	bindsym l mode "default"; exec "light-locker-command -l"
         bindsym s mode "default"; exec "i3-nagbar -t danger -m 'Do you really want to shut the system down?' -B 'Yes, Shutdown' 'shutdown now'"
-        bindsym r mode "default"; exec "i3-nagbar -t danger -m 'Do you really want to reboot the system?' -B 'Yes, Reboot' 'reboot'"
+        bindsym r mode "default"; exec "i3-nagbar -t danger -m 'Do you really want to reboot the system?' -B 'Yes, Reboot' 'shutdown -r now'"
 
 	# back to norman
         bindsym Return mode "default"
@@ -255,4 +255,5 @@ bindsym $mod+x workspace next
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
 
-bindsym $mod+Shift+p exec sh ~/.config/polybar/launch.sh && ~/.config/picom/scripts/launch.sh
+bindsym $mod+Shift+p exec bash ~/.config/picom/scripts/toggle.sh
+bindsym $mod+Shift+o exec bash ~/.config/polybar/launch.sh
