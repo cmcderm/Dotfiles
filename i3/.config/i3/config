@@ -208,9 +208,13 @@ bindsym $mod+Escape mode "System"
 new_window pixel
 default_floating_border normal
 
+set_from_resource $bg i3wm.color3
+set_from_resource $fg i3wm.color2
+set_from_resource $hl i3wm.color4
+
 # Colors (Default)
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused          $fg 	$bg 	#ffffff $hl       $fg
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -244,7 +248,7 @@ exec --no-startup-id xinput set-prop 15 306 1
 # Window Rules
 for_window [class='unityhub'] floating enable
 for_window [title="Microsoft Teams Notification"] floating enable
-for_window [title='galculator'] floating enable
+for_window [class='galculator'] floating enable
 
 # Custom Bindings
 bindsym $mod+Shift+less move workspace to output left
