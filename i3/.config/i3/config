@@ -248,7 +248,7 @@ exec --no-startup-id xinput set-prop 15 306 1
 # Window Rules
 for_window [class='unityhub'] floating enable
 for_window [title="Microsoft Teams Notification"] floating enable
-for_window [class='galculator'] floating enable
+for_window [title="galculator"] floating enable
 
 # Custom Bindings
 bindsym $mod+Shift+less move workspace to output left
