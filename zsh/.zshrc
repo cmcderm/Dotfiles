@@ -113,5 +113,3 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 # wal -e --vte -q -i ~/.config/wallpaper.png
 
-(cat ~/.cache/wal/sequences &)
-
