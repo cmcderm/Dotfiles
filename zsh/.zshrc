@@ -114,3 +114,4 @@ export EDITOR=nvim
 # wal -e --vte -q -i ~/.config/wallpaper.png
 
 (cat ~/.cache/wal/sequences &)
+source /usr/share/nvm/init-nvm.sh
