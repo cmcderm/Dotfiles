@@ -1,25 +1,3 @@
-" Plugins
-call plug#begin('~/.config/nvim/plugged')
-" call plug#begin(stdpath('data') . '/plugged')
-
-" Autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'} 
-
-" Markdown
-Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() } }
-
-" LaTeX
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
-
-call plug#end()
-
-" coc config
-let g:coc_global_extensions = [
-	\ 'coc-pairs',
-	\ 'coc-json',
-	\ 'coc-rls'
-	\]
-
 inoremap <silent><expr> <TAB>
 	\ pumvisible() ? "\<C-n>" :
 	\ <SID>check_back_space() ? "\<TAB>" :
