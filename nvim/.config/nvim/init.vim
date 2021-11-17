@@ -17,7 +17,8 @@ call plug#end()
 let g:coc_global_extensions = [
 	\ 'coc-pairs',
 	\ 'coc-json',
-	\ 'coc-rls'
+	\ 'coc-rls',
+	\ 'coc-python',
 	\]
 
 inoremap <silent><expr> <TAB>
@@ -61,8 +62,38 @@ set shiftwidth=4
 
 set listchars=tab:->,trail:~,extends:>,precedes:<,space:.
 noremap <F5> :set list!<CR>
+"===============================================
+" Terminal Mode
+"===============================================
+
+tnoremap <Esc> <C-\><C-n>
+
+
+"===============================================
+" Splitting and Tabs
+"===============================================
 
 set splitbelow splitright
+
+" Remap splits navigation to just CTRL + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Make adjusting split sizes a bit more friendly
+nnoremap <silent> <C-Left> :vertical resize +3<CR>
+nnoremap <silent> <C-Right> :vertical resize -3<CR>
+nnoremap <silent> <C-Up> :resize +3<CR>
+nnoremap <silent> <C-Down> :resize -3<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
+
+"=============================================
+" File Explorer
+"=============================================
 
 " Make netrw behave like NERDTree
 let g:netrw_banner = 0
