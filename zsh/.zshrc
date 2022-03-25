@@ -111,10 +111,17 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.bash_aliases ]] || source ~/.bash_aliases
 
 export EDITOR=nvim
+export VISUAL=nvim
 
 # source /usr/share/nvm/init-nvm.sh
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/nvm/init-nvm.sh
 
+if [[ -f $HOME/.zprofile ]]; then
+	source $HOME/.zprofile
+fi
+
 [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
+
+export PATH=$HOME/.cargo/bin/:$PATH
