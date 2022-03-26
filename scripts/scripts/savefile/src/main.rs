@@ -13,6 +13,8 @@ struct Args {
     source: String,
     #[clap(short, long)]
     target: String,
+    #[clap(short, long)]
+    backup_count: Option<u32>,
 }
 
 fn main() -> Result<(), std::io::Error>{
@@ -50,10 +52,10 @@ fn main() -> Result<(), std::io::Error>{
             let backup_dir = find_or_create_backup_dir(&target_path);
 
             let mut new_backup_path: PathBuf = backup_dir.clone();
-            println!("{:?}", new_backup_path);
             let created_date: DateTime<Local> = fs::metadata(&entry_path).unwrap().modified().unwrap().into();
 
-            new_backup_path.push(format!("{}-{}", entry_path.file_name().unwrap().to_str().unwrap(), created_date)); 
+            new_backup_path.push(format!("{}-{}", entry_path.file_name().unwrap().to_str().unwrap(), created_date.format("%Y-%m-%d_%T")));
+            println!("{:?} {:?}", entry_path, new_backup_path);
             fs::copy(entry_path, new_backup_path).unwrap();
         }
     }
