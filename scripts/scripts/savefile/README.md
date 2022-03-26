@@ -5,4 +5,8 @@
 3. ???
 4. Profit!
 
+### To-do
+1. Flags to cut down on older backups (or disable backups?)
+2. Alternate command to restore backup
+
 # I DO NOT TAKE RESPONSIBILITY FOR LOST DATA
