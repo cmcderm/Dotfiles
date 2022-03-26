@@ -4,9 +4,9 @@ use clap::Parser;
 #[clap(author, version, about, long_about = None)]
 struct Args {
     #[clap(short, long)]
-    sourcePath: String,
+    source: String,
     #[clap(short, long)]
-    targetPath: String,
+    target: String,
 }
 
 fn main() {
