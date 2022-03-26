@@ -5,6 +5,10 @@
 3. ???
 4. Profit!
 
+### Example
+* Saving dark souls III saves from proton
+`savefile -s /home/cmcderm/.steam/steam/steamapps/compatdata/374320/pfx/drive_c/users/steamuser/Application\ Data/DarkSoulsIII/ -t /home/cmcderm/Dropbox/Dark\ Souls\ Saves`
+
 ### To-do
 1. Flags to cut down on older backups (or disable backups?)
 2. Alternate command to restore backup
