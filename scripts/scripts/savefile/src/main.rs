@@ -24,7 +24,7 @@ fn main() -> Result<(), std::io::Error>{
     // let abs_source_path = fs::canonicalize(&source_path).expect("Expected source path to be a valid directory");
     let target_path = PathBuf::from(&args.target); 
 
-    let source_dir = fs::read_dir(source_path).expect("Expected source path to be a valid directory");
+    // let source_dir = fs::read_dir(&source_path).expect("Expected source path to be a valid directory");
     let target_dir = match fs::read_dir(&target_path) {
         Ok(dir) => { dir }
         Err(e) => {
@@ -55,27 +55,20 @@ fn main() -> Result<(), std::io::Error>{
             let created_date: DateTime<Local> = fs::metadata(&entry_path).unwrap().modified().unwrap().into();
 
             new_backup_path.push(format!("{}-{}", entry_path.file_name().unwrap().to_str().unwrap(), created_date.format("%Y-%m-%d_%T")));
-            println!("{:?} {:?}", entry_path, new_backup_path);
             fs::copy(entry_path, new_backup_path).unwrap();
         }
     }
 
     // TODO: Clear out older backups
 
-    for e in source_dir {
-        let entry = e.unwrap();
-        println!("{:?}", entry);
-
-        let origin_path = entry.path();
-        // Archive and Compress into .tar.gz
-        
-        let copy_path: PathBuf = [abs_target_path.as_os_str(), origin_path.file_name().unwrap()].iter().collect();
-        let archive = File::create(format!("{}.tar.gz", copy_path.to_str().unwrap())).unwrap();
-        let enc = GzEncoder::new(archive, Compression::default());
-        let mut tar = tar::Builder::new(enc);
-        tar.append_dir_all(PathBuf::from("./"), &origin_path).unwrap();
-        tar.finish().unwrap(); 
-    }
+    // Zip up entire source path into a .tar.gz in target path
+    let copy_path: PathBuf = [abs_target_path.as_os_str(), source_path.file_name().unwrap()].iter().collect();
+    let archive = File::create(format!("{}.tar.gz", copy_path.to_str().unwrap())).unwrap();
+    let enc = GzEncoder::new(archive, Compression::default());
+    let mut tar = tar::Builder::new(enc);
+    println!("{:?}", &source_path);
+    tar.append_dir_all(PathBuf::from("./"), &source_path).unwrap();
+    tar.finish().unwrap(); 
 
     Ok(())
 }
