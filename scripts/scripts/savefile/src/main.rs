@@ -1,10 +1,9 @@
 use clap::Parser;
-use std::fs::ReadDir;
-use std::{fs, fs::DirEntry};
+use std::{fs, fs::File};
 use std::io;
 use std::path::{Path, PathBuf};
-// use flate2::{read::GzDecoder, write::GzEncoder};
-// use tar::Archive;
+use flate2::{Compression, write::GzEncoder};
+use chrono::{offset::Utc, DateTime};
 
 
 #[derive(Parser, Debug)]
@@ -16,7 +15,7 @@ struct Args {
     target: String,
 }
 
-fn main() {
+fn main() -> Result<(), std::io::Error>{
     let args = Args::parse();
 
     let source_path = PathBuf::from(args.source);
@@ -36,34 +35,46 @@ fn main() {
             }
         }
     };
-
-    // Find/Create Backup Folder in Target Path
-    let backup_dir = find_or_create_backup_dir(&target_path);
-
+    
     for e in target_dir {
         let entry_path = e.unwrap().path();
+        if entry_path.is_dir() {
+            continue
+        }
         
-        if (entry_path.is_dir()) {
+        let ext = entry_path.extension().unwrap().to_str().unwrap();
+        if ext == "gz" {
+            let backup_dir = find_or_create_backup_dir(&target_path);
 
+            let mut new_backup_path: PathBuf = backup_dir.clone();
+            let created_date: DateTime<Utc> = fs::metadata(&entry_path).unwrap().created().unwrap().into();
+
+            new_backup_path.push(format!("{}-{}", entry_path.file_name().unwrap().to_str().unwrap(), created_date)); 
+            fs::copy(entry_path, new_backup_path).unwrap();
         }
     }
+
+    // TODO: Clear out older backups
 
     for e in source_dir {
         let entry = e.unwrap();
         println!("{:?}", entry);
 
-        let path = entry.path();
+        let origin_path = entry.path();
         // Archive and Compress into .tar.gz
-
-
-        // Copy old copy to backup folder
-
-        // Copy Archive To Target 
+        let copy_path: PathBuf = [&target_path, &origin_path].iter().collect();
+        let archive = File::create(format!("{}.tar.gz", copy_path.to_str().unwrap())).unwrap();
+        let enc = GzEncoder::new(archive, Compression::default());
+        let mut tar = tar::Builder::new(enc);
+        tar.append_dir_all(&target_path, &origin_path).unwrap();
+        tar.finish().unwrap(); 
     }
+
+    Ok(())
 }
 
 fn find_or_create_backup_dir(target_dir: &Path) -> PathBuf {
-    let backup_path: PathBuf = [target_dir.as_os_str(), std::ffi::OsStr::new("backup")].iter().collect();
+    let backup_path: PathBuf = [target_dir.as_os_str().to_str().unwrap(), "backup"].iter().collect();
     if !backup_path.is_dir() {
         fs::create_dir(&backup_path).unwrap();
     }
