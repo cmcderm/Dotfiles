@@ -21,10 +21,8 @@ fn main() -> Result<(), std::io::Error>{
     let args = Args::parse();
 
     let source_path = PathBuf::from(&args.source);
-    // let abs_source_path = fs::canonicalize(&source_path).expect("Expected source path to be a valid directory");
     let target_path = PathBuf::from(&args.target); 
 
-    // let source_dir = fs::read_dir(&source_path).expect("Expected source path to be a valid directory");
     let target_dir = match fs::read_dir(&target_path) {
         Ok(dir) => { dir }
         Err(e) => {
