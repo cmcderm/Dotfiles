@@ -58,6 +58,9 @@ fn main() -> Result<(), std::io::Error>{
     }
 
     // TODO: Clear out older backups
+    if let Some(b) = args.backup_count {
+        let sorted_entries = target_dir.map(|e| {e.unwrap()});
+    }
 
     // Zip up entire source path into a .tar.gz in target path
     let copy_path: PathBuf = [abs_target_path.as_os_str(), source_path.file_name().unwrap()].iter().collect();
