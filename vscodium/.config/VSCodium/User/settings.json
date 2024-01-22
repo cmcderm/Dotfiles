@@ -1,8 +1,10 @@
 {
+    "window.titleBarStyle": "custom",
     "telemetry.telemetryLevel": "off",
-    "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
     "workbench.colorCustomizations": {
-        "[Community Material Theme Darker High Contrast]": {
+        "[Material Theme Darker High Contrast]": {
             "terminal.ansiBrightBlack": "#a1a1a1",
             "list.inactiveSelectionForeground": "#f1cb53",
             "activityBarBadge.background": "#F1CB53",
@@ -50,8 +52,8 @@
             "name": "Wordpress"
         }
     ],
+    // C#
     "omnisharp.path": "latest",
     "omnisharp.useGlobalMono": "never",
     "omnisharp.dotnetPath": "/usr/bin/dotnet",
-    "workbench.iconTheme": "eq-material-theme-icons-darker"
 }
