@@ -1,0 +1,3 @@
+[submodule "/home/cmcderm/Dotfiles/nvim/.config/nvim"]
+	path = /home/cmcderm/Dotfiles/nvim/.config/nvim
+	url = git@github.com:ThePrimeagen/init.lua
