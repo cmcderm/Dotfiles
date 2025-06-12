@@ -111,5 +111,33 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.bash_aliases ]] || source ~/.bash_aliases
 
 export EDITOR=nvim
-# wal -e --vte -q -i ~/.config/wallpaper.png
+export VISUAL=nvim
+
+# source /usr/share/nvm/init-nvm.sh
+
+if [[ -f $HOME/.zprofile ]]; then
+	source $HOME/.zprofile
+fi
+
+[[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
+
+export PATH=$HOME/.cargo/bin/:$PATH
+
+export ROCM_PATH=/opt/rocm
+export HSA_OVERRIDE_GFX_VERSION=11.0.0
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

@@ -1,0 +1,59 @@
+{
+    "window.titleBarStyle": "custom",
+    "telemetry.telemetryLevel": "off",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "workbench.colorCustomizations": {
+        "[Material Theme Darker High Contrast]": {
+            "terminal.ansiBrightBlack": "#a1a1a1",
+            "list.inactiveSelectionForeground": "#f1cb53",
+            "activityBarBadge.background": "#F1CB53",
+            "activityBar.activeBorder": "#F1CB53",
+            "editorError.foreground": "#ff0000",
+            "gitDecoration.modifiedResourceForeground": "#cc0",
+            "gitDecoration.conflictingResourceForeground": "#ee0000",
+            "gitDecoration.addedResourceForeground": "#0c0"
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Material Theme Darker High Contrast]": {
+            "comments": "#b2b2b2"
+        }
+    },
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": false,
+    "editor.fontSize": 14,
+    "editor.minimap.renderCharacters": true,
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.fontFamily": "Hack Nerd Font",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.suggestSelection": "first",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "rust-analyzer.checkOnSave.command": "clippy",
+    // HTML
+    "html.autoClosingTags": true,
+    // File Associations
+    "files.associations": {
+        "*.html": "html",
+        "*.js": "javascriptreact"
+    },
+    // Python
+    "vsintellicode.python.completionsEnabled": true,
+    // SSH
+    "remote.SSH.configFile": "~/.ssh/config",
+    "sshfs.configs": [
+        {
+            "name": "Wordpress"
+        }
+    ],
+    // C#
+    "omnisharp.path": "latest",
+    "omnisharp.useGlobalMono": "never",
+    "omnisharp.dotnetPath": "/usr/bin/dotnet",
+}
