@@ -8,3 +8,5 @@ alias reflect='reflector --latest 200 -c "United States" --sort "rate" -p "https
 alias vim='nvim'
 
 alias python='python3'
+
+alias rosetta='arch -x86_64 zsh'
